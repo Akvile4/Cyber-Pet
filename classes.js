@@ -1,26 +1,26 @@
 class Pet {
-    constructor(type, name, doy, level) {
-        this.type = type
+    constructor(name) {
+        // this.type = type
         this.name = name
-        this.doy = doy 
-        this.level = level
+        // this.doy = doy 
     }
 
     get realName() {
         return `Your cute little ${this.type}'s name is ${this.name}.`
     }
 
-    get age() {
-        let date = new date()
-        let age = date.getFullYear() - this.doy
-        return age
-    }
+    // get age() {
+    //     let date = new date()
+    //     let age = date.getFullYear() - this.doy
+    //     return age
+    // }
 
     hunger = 0
     thirst = 0
     happiness = 30
     energy = 50
     boredom = 10
+    level = 1
 
     levelUp() {
         if (this.happiness >= 60) {
@@ -36,7 +36,7 @@ class Pet {
         this.boredom += 10
     }
 
-    food() {
+    feed() {
         this.hunger = 0
         this.happiness += 20
         this.thirst += 20
@@ -46,8 +46,8 @@ class Pet {
         this.energy = 50
         this.boredom += 30
         this.happiness -= 30
-        this.hunger -= 20
-        this.thirst -= 30
+        this.hunger += 20
+        this.thirst += 30
     }
 
     death() {
@@ -65,8 +65,8 @@ class Pet {
 }
 
 class Unicorn extends Pet {
-    constructor(type, name, doy, level) {
-        super(type, name, doy, level)
+    constructor(name) {
+        super(name)
     }
 
     ride() {
@@ -109,8 +109,8 @@ class Unicorn extends Pet {
 }
 
 class Octopus extends Pet {
-    constructor(type, name, doy, level) {
-        super(type, name, doy, level)
+    constructor(name) {
+        super(name)
     }
 
     thirst = 0
@@ -141,8 +141,8 @@ class Octopus extends Pet {
 }
 
 class Phoenix extends Pet {
-    constructor(type, name, doy, level) {
-        super(type, name, doy, level)
+    constructor(name) {
+        super(name)
     }
 
     play() {
@@ -173,19 +173,25 @@ class Phoenix extends Pet {
     }
 }
 
-let beauty = new Unicorn("unicorn","Beauty", 2021, 1)
-let beauty2 = new Pet("unicorn", "Beauty", 2022, 2)
+module.exports = {
+    Unicorn,
+    Octopus,
+    Phoenix
+}
 
-let inky = new Octopus("octopus", "Inky", 2016, 2)
+// let beauty = new Unicorn("unicorn","Beauty", 2021, 1)
+// let beauty2 = new Pet("unicorn", "Beauty", 2022, 2)
 
-let felix = new Phoenix("pheonix", "Felix", 2010, 4)
+// let inky = new Octopus("octopus", "Inky", 2016, 2)
 
-beauty.ride()
-// beauty.drink()
-console.log(beauty.water())
+// let felix = new Phoenix("pheonix", "Felix", 2010, 4)
 
-console.log(inky.swim())
-console.log(inky.food())
+// beauty.ride()
+// // beauty.drink()
+// console.log(beauty.water())
 
-console.log(felix.fly())
-console.log(felix.sing())
+// console.log(inky.swim())
+// console.log(inky.food())
+
+// console.log(felix.fly())
+// console.log(felix.sing())
