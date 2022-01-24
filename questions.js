@@ -22,9 +22,10 @@ let gameQuestions = [
         type: "list",
         name: "action",
         message: "What would you like your pet to do?",
-        choices: ["Water", "Sleep", "Feed", "Ride (Unicorn only)", "Shower (Unicorn only)", "Play (Unicorn only)", "Play (Octopus only)", "Swim (Octopus only)", "Hunting (Octopus only)", "Play (Phoenix only)", "Fly (Phoenix only)", "Sing (Phoenix only)"]
+        choices: ["Water", "Sleep", "Feed"]
     }
 ];
+
 
 // let gameQuestionsUni = [
 //     {

@@ -14,12 +14,18 @@ const begin = async () => {
 
     if (answer.type === "Unicorn") {
         myCyberPet = new Unicorn(answer.name)
+
+        gameQuestions[0].choices.push("Ride (Unicorn only)","Shower (Unicorn only)","Play (Unicorn only)")
     }
     else if (answer.type === "Octopus") {
         myCyberPet = new Octopus(answer.name)
+
+        gameQuestions[0].choices.push("Play (Octopus only)", "Swim (Octopus only)", "Hunting (Octopus only)")
     }
     else {
         myCyberPet = new Phoenix(answer.name)
+
+        gameQuestions[0].choices.push("Play (Phoenix only)", "Fly (Phoenix only)", "Sing (Phoenix only)")
     }
 
     ui.log.write(`${myCyberPet.name.toUpperCase()} 
